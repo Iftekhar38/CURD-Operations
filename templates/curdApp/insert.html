@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% extends 'curdApp/base.html' %}
+{% block title %} inset {% endblock %}
+
+{% block body %}
+
+<div style="margin-top: 30px;" align="center">
+<h2>Feed Your data</h2>
+    <form action="/addnew/" method="post">
+<table>
+    {{form.as_table}}
+    {% csrf_token %}
+
+</table>
+    <br>
+    <button style="background-color:green; color:white;">Submit</button>
+
+
+</form>
+     <a href="\"><button style="background-color:red; color:white;">Back</button></a>
+    </div>
+
+{% endblock %}

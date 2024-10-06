@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% extends 'curdApp/base.html' %}
+{% block title %} updateRecord {% endblock %}
+
+{% block body %}
+
+ {% if formData %}
+<div style="margin-top: 30px;" align="center">
+<h2>Update Your data</h2>
+  <form method="post">
+
+<table border="1" style="text-align:center;">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Roll No</th>
+    <th>School</th>
+    <th>Address</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><input name = 'name' type="text" value="{{formData.name}}" /></td>
+    <td><input name = 'rollno' type="text" value="{{formData.rollno}}" /></td>
+    <td><input name = 'school' type="text" value="{{formData.school}}" /></td>
+    <td><input name = 'address' type="text" value="{{formData.address}}" /></td>
+  </tr>
+  </tbody>
+
+    {% csrf_token %}
+
+</table>
+    <br>
+    <button style="background-color:green; color:white;">Update</button>
+
+
+</form>
+     <a href="\update\"><button style="background-color:red; color:white;">Back</button></a>
+    </div>
+{% else %}
+<p>No Record Found</p>
+{% endif %}
+{% endblock %}

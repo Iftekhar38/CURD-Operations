@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% extends 'curdApp/base.html' %}
+
+{% block title %} data {% endblock %}
+
+{% block body %}
+{% if formData %}
+<div align="center" style="margin-top: 30px">
+  <h2>All Data</h2>
+<table border="2" style="text-align:center;">
+  <thead>
+  <tr>
+  <th>Name</th>
+  <th>Roll No</th>
+  <th>School</th>
+  <th>Address</th>
+  </tr>
+  </thead>
+  <tbody>
+  {% for data in formData %}
+  <tr>
+    <td>{{data.name}}</td>
+    <td>{{data.rollno}}</td>
+    <td>{{data.school}}</td>
+    <td>{{data.address}}</td>
+  </tr>
+  {% endfor %}
+  </tbody>
+
+</table>
+  <br>
+  <a href="\"><button style="background-color:red; color:white;">Back</button></a>
+</div>
+{% else %}
+<p>No Record found</p>
+{% endif %}
+
+{% endblock %}
